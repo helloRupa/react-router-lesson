@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./assets/css/minty.css";
+import "./App.css";
+import GlassesBrowser from "./components/GlassesBrowser";
+import Manager from "./components/Manager";
+import NavBar from "./components/NavBar";
+import GLASSES from "./data";
+import Details from "./components/Details";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// We need to take care of routing and rendering GlassesBrowser, Manager, and Details
+// With appropriate client-side routes / URLs
+
+class App extends React.Component {
+
+  state = {
+    glasses: []
+  };
+
+  componentDidMount() {
+    this.setState({ glasses: GLASSES });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <NavBar />
+        <GlassesBrowser glasses={ this.state.glasses } />
+        <Manager />
+      </div>
+    );
+  }
 }
 
 export default App;
