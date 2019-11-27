@@ -2,7 +2,7 @@ import React from "react";
 
 // need to match specific glasses based on url
 // glasses is all the glasses
-// this component renders before state is set in App (async fetch)
+// this component renders before state is set in App (wait for mount)
 
 const Details = ({ glasses, match }) => {
 

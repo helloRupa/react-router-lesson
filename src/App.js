@@ -29,7 +29,7 @@ class App extends React.Component {
           <Route component={ NavBar } />
           <Route exact path='/glasses' render={ (routerProps) => < GlassesBrowser {...routerProps} glasses={ this.state.glasses } /> } />
           <Route exact path='/manager' component={ Manager } />
-          {/* I believe the below path renders before the fetch completes, glasses is empty on first render, filled on second render */}
+          {/* I believe the below path renders before the mount completes, glasses is empty on first render, filled on second render */}
           <Route exact path='/glasses/:id' render={ (routerProps) => < Details {...routerProps} glasses={ this.state.glasses } /> } />
         </Router>
       </div>
