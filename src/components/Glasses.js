@@ -1,8 +1,9 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Glasses = ({ glasses }) => {
 
-  const { image, style, maker } = glasses;
+  const { image, style, maker, id } = glasses;
 
   return (
     <>
@@ -12,6 +13,7 @@ const Glasses = ({ glasses }) => {
           <div className="card-body">
             <h3>{ style }</h3>
             <h4>{ maker }</h4>
+            <Link to={ `/glasses/${id}` }>Details</Link>
           </div>
         </div>
       </div>

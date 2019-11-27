@@ -1,12 +1,12 @@
 import React from "react";
-
-// className for nav links = btn btn-info
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
 
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div>Hi I'm useless navigation</div>
+        <NavLink className="btn btn-info" to="/glasses">Glasses</NavLink>
+        <NavLink className="btn btn-info" to="/manager">Manager</NavLink>
       </nav>
     );
 
